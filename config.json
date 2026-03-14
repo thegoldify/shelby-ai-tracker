@@ -1,0 +1,13 @@
+{
+  "node_settings": {
+    "project_name": "Goldify Shelby Tracker",
+    "network": "Shelby Testnet",
+    "refresh_interval": 30,
+    "api_endpoint": "http://localhost:26657"
+  },
+  "visual_settings": {
+    "theme": "gold-dark",
+    "show_map": true,
+    "notifications": true
+  }
+}
