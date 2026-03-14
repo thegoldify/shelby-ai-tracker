@@ -1,0 +1,18 @@
+{
+  "name": "shelby-ai-tracker",
+  "version": "1.0.0",
+  "description": "Professional node monitoring dashboard for Shelby Ecosystem",
+  "main": "index.html",
+  "author": "Goldify",
+  "license": "MIT",
+  "keywords": [
+    "blockchain",
+    "node-monitoring",
+    "shelby-ai",
+    "validator-tools"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thegoldify/shelby-ai-tracker.git"
+  }
+}
