@@ -13,113 +13,157 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             background-color: var(--dark-bg);
             color: white;
             margin: 0;
-            padding: 40px;
-            display: flex;
-            justify-content: center;
+            padding: 20px;
         }
 
         .container {
             width: 100%;
-            max-width: 900px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 40px;
-            border-bottom: 1px solid #333;
-            padding-bottom: 20px;
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid var(--gold);
+            border-radius: 15px;
         }
 
         .header h1 {
             color: var(--gold);
-            font-size: 2.5rem;
             margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 5px;
         }
 
-        .header p {
-            color: var(--text-gray);
-            font-size: 1rem;
-        }
-
-        .dashboard-grid {
+        /* Yeni Sistem Kaynakları Bölümü */
+        .system-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
-        .stat-card {
+        .progress-container {
             background: var(--card-bg);
-            padding: 20px;
-            border-radius: 12px;
+            padding: 15px;
+            border-radius: 10px;
             border: 1px solid #333;
-            text-align: center;
-            transition: transform 0.3s ease;
         }
 
-        .stat-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--gold);
+        .progress-bar-bg {
+            background: #333;
+            height: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
         }
 
-        .stat-card h3 {
-            color: var(--text-gray);
-            font-size: 0.8rem;
-            margin: 0 0 10px 0;
-        }
-
-        .stat-card div {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--gold);
+        .progress-bar-fill {
+            background: var(--gold);
+            height: 100%;
+            border-radius: 5px;
+            width: 65%; /* Örnek değer */
+            box-shadow: 0 0 10px var(--gold);
         }
 
         .peer-table-container {
             background: var(--card-bg);
             border-radius: 12px;
-            padding: 25px;
+            padding: 20px;
+            border: 1px solid #333;
+            margin-bottom: 20px;
+        }
+
+        /* Log Ekranı */
+        .log-container {
+            background: #000;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            padding: 15px;
+            border-radius: 10px;
+            height: 150px;
+            overflow: hidden;
+            font-size: 0.8rem;
             border: 1px solid #333;
         }
 
-        h2 {
-            font-size: 1.2rem;
-            margin-top: 0;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+        table { width: 100%; border-collapse: collapse; }
+        th { text-align: left; color: var(--gold); padding: 10px; border-bottom: 1px solid #333; }
+        td { padding: 10px; border-bottom: 1px solid #222; }
 
-        h2::before {
-            content: "📡";
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th {
-            text-align: left;
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
             color: var(--text-gray);
+        }
+
+        .social-btn {
+            color: var(--gold);
+            text-decoration: none;
+            border: 1px solid var(--gold);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 0 10px;
             font-size: 0.9rem;
-            padding: 15px 10px;
-            border-bottom: 2px solid #333;
         }
+    </style>
+</head>
+<body>
 
-        td {
-            padding: 15px 10px;
-            border-bottom: 1px solid #222;
-            font-size: 0.95rem;
-        }
+<div class="container">
+    <div class="header">
+        <h1>GOLDIFY</h1>
+        <p>Advanced Shelby Ecosystem Health Tracker</p>
+    </div>
 
-        .status-dot {
-            height: 8px;
-            width: 8px;
-            background-color: #00ff00;
+    <div class="system-stats">
+        <div class="progress-container">
+            <span style="font-size: 0.8rem;">CPU KULLANIMI</span>
+            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 34%;"></div></div>
+        </div>
+        <div class="progress-container">
+            <span style="font-size: 0.8rem;">RAM KULLANIMI</span>
+            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 58%;"></div></div>
+        </div>
+    </div>
+
+    <div class="peer-table-container">
+        <h2>Ağ Bağlantıları</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ADRES</th>
+                    <th>LOKASYON</th>
+                    <th>GECİKME</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>peer_77...</td><td>🇹🇷 İstanbul</td><td>15ms</td></tr>
+                <tr><td>peer_21...</td><td>🇩🇪 Frankfurt</td><td>38ms</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 style="color: var(--gold); font-size: 1rem;">CANLI SİSTEM GÜNLÜĞÜ (LOGS)</h3>
+    <div class="log-container">
+        > Bağlantı kuruluyor... <br>
+        > Shelby Testnet v2.1 bulundu. <br>
+        > Blok yüksekliği senkronize ediliyor: 1,452,890 <br>
+        > Peer analizi tamamlandı: 14 aktif bağlantı. <br>
+        > Sistem durumu: Stabil.
+    </div>
+
+    <div class="footer">
+        <p>Geliştirici: Goldify</p>
+        <a href="https://twitter.com/thegoldifyy" class="social-btn">Twitter</a>
+        <a href="#" class="social-btn">Discord (goldify)</a>
+    </div>
+</div>
+
+</body>
+</html>
