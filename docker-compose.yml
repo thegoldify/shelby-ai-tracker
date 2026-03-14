@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  shelby-tracker:
+    image: nginx:alpine
+    container_name: goldify-tracker
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/usr/share/nginx/html
+    restart: always
+
+# Bu dosya, tracker'ın Docker üzerinde 8080 portunda çalışmasını sağlar.
